@@ -1,0 +1,111 @@
+/* Hallmark · shape: app screen · genre: playful · theme: custom (by request, light and soft)
+ * nav: a light left rail · signature: the client health dial · states: loading, empty, error, full · halftone: none
+ * axes: light/rounded-sans/cool · posture: restrained · contrast: pass · v2.0.0
+ */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V5 · weakest: S, an agency console could look like any dashboard; the client dial and the retainer figures carry the agency-specific truth */
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./base.css" layer(base);
+
+/* ---------- Motion ----------
+ *
+ * One settle: content rises 10px and fades in. Everything is visible at
+ * rest, so a failed script never leaves a blank page.
+ */
+
+/* ---------- Motion ----------
+ *
+ * One settle: content rises 10px and fades in. Everything is visible at
+ * rest, so a failed script never leaves a blank page.
+ */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes draw-in {
+  from {
+    stroke-dashoffset: var(--dash-length, 400);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+@utility animate-rise {
+  animation: rise-in 0.55s var(--ease-out) both;
+}
+
+@utility animate-scale {
+  animation: scale-in 0.45s var(--ease-out) both;
+}
+
+@utility animate-slide {
+  animation: slide-left 0.45s var(--ease-out) both;
+}
+
+@utility animate-draw {
+  animation: draw-in 1s var(--ease-out) both;
+}
+
+@utility animate-breathe {
+  animation: pulse-ring 2.4s ease-in-out infinite;
+}
+
+/* A staggered row: each child waits a little longer than the last.
+ * Set --i on each child. */
+.stagger > * {
+  animation: rise-in 0.55s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+
+/*
+ * Brightside.
+ *
+ * A light, warm-ivory ground with cool ink. One soft periwinkle accent
+ * carries controls and the current selection; three pastel washes give each
+ * client their own identity. Everything is separated by a visible hairline
+ * and a soft shadow, so no surface floats or disappears.
+ */

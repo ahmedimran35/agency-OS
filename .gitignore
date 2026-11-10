@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+.next/
+out/
+build/
+dist/
+
+# Next.js
+next-env.d.ts
+
+# Production
+.vercel
+
+# Testing
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment
+.env
+.env*.local
+.env.development
+.env.production
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Hallmark audit artefacts (screenshots and records)
+.hallmark/shots/
+.hallmark/before/
+.hallmark/before.json
+.hallmark/before.txt
+.hallmark/compare.html
+.hallmark/salt

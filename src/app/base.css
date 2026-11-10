@@ -1,0 +1,166 @@
+/* Hallmark · shape: app screen · genre: playful · theme: custom (by request, light and soft)
+ * nav: a light left rail · signature: the client health dial · states: loading, empty, error, full · halftone: none
+ * axes: light/rounded-sans/cool · posture: restrained · contrast: pass · v2.0.0
+ */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V5 · weakest: S, an agency console could look like any dashboard; the client dial and the retainer figures carry the agency-specific truth */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Gate 34: clip keeps sticky and fixed working where hidden breaks them. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  html {
+    scrollbar-color: var(--color-rule) var(--color-paper);
+    scroll-padding-top: var(--space-3xl);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-paper);
+    /* The ground is not a flat fill: a soft wash of light from the top, and
+       the faintest bloom of the accent behind the first screen. */
+    background-image: radial-gradient(
+        ellipse 80% 50% at 50% -12%,
+        color-mix(in oklab, var(--color-accent-soft) 60%, transparent),
+        transparent 68%
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-paper-raised) 40%, transparent),
+        transparent 340px
+      );
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    caret-color: var(--color-accent);
+    font-synthesis: none;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 22%, transparent);
+    color: var(--color-ink);
+  }
+
+  /* Gate 15 and 26a: the ring appears instantly, never fades. */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-synthesis: none;
+    letter-spacing: var(--tracking-display);
+    line-height: 1.12;
+    overflow-wrap: break-word;
+    min-width: 0;
+    text-wrap: balance;
+  }
+
+  h1 {
+    max-width: 20ch;
+    font-size: var(--text-display);
+  }
+  h2 {
+    max-width: 30ch;
+    font-size: var(--text-section);
+  }
+  h3 {
+    max-width: 40ch;
+    font-size: var(--text-title);
+    line-height: 1.25;
+  }
+
+  .lead {
+    font-size: var(--text-lead);
+    line-height: 1.45;
+    max-width: 52ch;
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  p:not([class]) {
+    max-width: 65ch;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  svg {
+    display: block;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    box-sizing: border-box;
+  }
+
+  .num,
+  .figure,
+  td.num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Gate 62: nothing is hidden at rest. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

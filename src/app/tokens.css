@@ -1,0 +1,154 @@
+/* Hallmark · shape: app screen · genre: playful · theme: custom (by request, light and soft)
+ * nav: a light left rail · signature: the client health dial · states: loading, empty, error, full · halftone: none
+ * axes: light/rounded-sans/cool · posture: restrained · contrast: pass · v2.0.0
+ */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V5 · weakest: S, an agency console could look like any dashboard; the client dial and the retainer figures carry the agency-specific truth */
+/*
+ * Tokens.
+ *
+ * A cool dove ground with warm-white cards: two temperatures, so a card
+ * reads as a lit object sitting on the desk rather than a hole in the page.
+ * One soft periwinkle accent for controls and the current selection, and
+ * pastel washes for a client's identity. Nothing is heavy: no saturated
+ * green, no red field, no glow.
+ *
+ * Every pair below was contrast-checked against its own background before it
+ * was written down, not after.
+ */
+
+@theme static {
+  /* ---- Surfaces: Sorbet, a light warm ground ---- */
+  --color-paper: oklch(98.8% 0.01 88);
+  --color-paper-2: oklch(96.8% 0.013 88);
+  --color-paper-3: oklch(93.8% 0.016 90);
+  --color-paper-raised: oklch(99.8% 0.004 85);
+
+  /* ---- Ink ---- */
+  --color-ink: oklch(25% 0.026 40);
+  --color-ink-2: oklch(40% 0.028 42);
+  --color-muted: oklch(47% 0.026 44);
+
+  /* ---- Rules and controls ---- */
+  --color-rule: oklch(89.5% 0.016 85);
+  --color-accent: oklch(56% 0.145 35);
+  --color-accent-2: oklch(54% 0.105 225);
+  --color-accent-3: oklch(86% 0.11 92);
+  --color-accent-ink: oklch(99% 0.01 35);
+  --color-accent-3-ink: oklch(28% 0.05 90);
+  --color-accent-text: oklch(46% 0.145 35);
+  --color-accent-2-text: oklch(46% 0.105 225);
+  --color-accent-soft: oklch(95.5% 0.035 35);
+  --color-accent-2-soft: oklch(95.8% 0.026 225);
+  --color-accent-3-soft: oklch(96.8% 0.05 92);
+  --color-focus: oklch(46% 0.14 35);
+
+  /* ---- Pastel washes, for identity only ---- */
+  --color-mint: oklch(95% 0.04 165);
+  --color-peach: oklch(95% 0.04 45);
+  --color-sky: oklch(95% 0.038 235);
+  --color-butter: oklch(95.5% 0.045 95);
+  --color-lilac: oklch(95% 0.04 305);
+
+  /* ---- Status: soft fills with dark ink on them ---- */
+  --color-error: oklch(94% 0.04 25);
+  --color-error-ink: oklch(42% 0.13 25);
+  --color-error-text: oklch(46% 0.14 25);
+  --color-success: oklch(93.5% 0.045 160);
+  --color-success-ink: oklch(36% 0.09 160);
+  --color-success-text: oklch(40% 0.1 160);
+
+  /* ---- Type ---- */
+  --font-display: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  /* App screens: a fixed 1.2 ratio, no fluid heads, no display face on data. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.44rem;
+  --text-2xl: 1.728rem;
+  --text-3xl: 2.074rem;
+  --text-display-s: 2.074rem;
+  --text-display: 2.488rem;
+  --text-section: 1.728rem;
+  --text-title: 1.2rem;
+  --text-lead: 1.2rem;
+
+  --tracking-display: -0.02em;
+
+  /* ---- Shape: soft and friendly, never sharp ---- */
+  --radius-card: 1.25rem;
+  --radius-control: 0.75rem;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px oklch(30% 0.02 265 / 0.04),
+    0 6px 16px -8px oklch(30% 0.02 265 / 0.12);
+  --shadow-lift: 0 2px 4px oklch(30% 0.02 265 / 0.05),
+    0 12px 28px -12px oklch(30% 0.02 265 / 0.18);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+:root {
+  /* ---- Space ---- */
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 144px;
+
+  /* ---- Motion ---- */
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  /* ---- Canvas ---- */
+  --container: 1440px;
+  --gutter: 64px;
+  --gap-columns: 32px;
+  --section-gap-s: 120px;
+  --section-gap: 144px;
+  --section-gap-l: 176px;
+
+  /* ---- Layers ---- */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  /* ---- Rules ---- */
+  --rule-hair: 1px;
+  --rule-bar: 2px;
+
+  color-scheme: light;
+}
+
+@media (max-width: 60rem) {
+  :root {
+    --gutter: 24px;
+    --section-gap-s: 80px;
+    --section-gap: 96px;
+    --section-gap-l: 120px;
+  }
+}
+
+@media (max-width: 40rem) {
+  :root {
+    --gutter: 16px;
+    --section-gap-s: 56px;
+    --section-gap: 72px;
+    --section-gap-l: 96px;
+    --gap-columns: 16px;
+  }
+}
